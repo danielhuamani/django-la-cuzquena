@@ -1,0 +1,23 @@
+{
+    "DB_NAME": "postgres",
+    "DB_USER": "postgres",
+    "DB_PASSWORD": "postgres",
+    "DB_PORT": "5432",
+
+    "URL_SITE": "http://localhost:8000/",
+    "SECRET_KEY": "#11p+j2e*j=w8+(499na#p0@!gc(b_zw$qkf3!9-^x+wq423tm",
+
+    "MEDIA_ROOT": "",
+    "MEDIA_URL": "/media/",
+    "STATIC_ROOT": "",
+    "STATIC_URL": "/static/",
+    "ALLOWED_HOSTS": ["127.0.0.1"],
+
+    "WORKON_HOME": "/home/{user}/.virtualenvs",
+    "ENV": "venv",
+
+    "EMAIL_HOST": "smtp.webfaction.com",
+    "EMAIL_HOST_USER": "webmaster_staff",
+    "EMAIL_HOST_PASSWORD": "142857",
+    "SERVER_EMAIL": "danielhuamani@gmail.com"
+}
