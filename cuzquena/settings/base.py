@@ -37,12 +37,16 @@ DJANGO_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    ]
+]
 
 THIRD_PARTY_APPS = [
     "geoposition",
     'admin_reorder',
-    ]
+    'django_summernote',
+    'easy_thumbnails',
+    'filer',
+
+]
 
 
 LOCAL_APPS = [
@@ -131,7 +135,7 @@ GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyAxYmorvw6JL6mAaUZKo3xxIdXyjzzfvF4'
 
 ADMIN_REORDER = (
     # Keep original label and models
-    'sites',
+    # 'sites',
 
     # Rename app
     {'app': 'auth', 'label': u'AUTENTICACIÓN Y AUTORIZACIÓN'},
@@ -140,11 +144,20 @@ ADMIN_REORDER = (
 
     )},
     {'app': 'web', 'label': u'Home', 'models': (
-        {'model': 'web.Home', 'label': 'Banner'},
-        {'model': 'web.HomeBanner', 'label': 'Contenido'},
+        {'model': 'web.HomeBanner', 'label': 'Banner'},
+        {'model': 'web.Home', 'label': 'Contenido'},
     )},
     # Reorder app models
 
     # models with custom name
 
 )
+THUMBNAIL_HIGH_RESOLUTION = True
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+FILER_CANONICAL_URL = 'sharing/'
