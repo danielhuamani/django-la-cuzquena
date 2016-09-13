@@ -44,8 +44,8 @@ THIRD_PARTY_APPS = [
     'admin_reorder',
     'django_summernote',
     'easy_thumbnails',
-    'filer',
 
+    'filebrowser',
 ]
 
 
@@ -147,17 +147,50 @@ ADMIN_REORDER = (
         {'model': 'web.HomeBanner', 'label': 'Banner'},
         {'model': 'web.Home', 'label': 'Contenido'},
     )},
+    {'app': 'web', 'label': u'Nosotros', 'models': (
+        {'model': 'web.Nosotros', 'label': u'Nosotros'},
+        {'model': 'web.Valores', 'label': u'Valores'},
+
+    )},
+    {'app': 'web', 'label': u'Servicios', 'models': (
+        {'model': 'web.Servicios', 'label': u'Servicios'},
+        {'model': 'web.NuestrosServicios', 'label': u'Nuestros Servicios'},
+
+    )},
+    {'app': 'web', 'label': u'Vehiculos', 'models': (
+        {'model': 'web.Vehiculos', 'label': u'Vehiculos'},
+
+
+    )},
+    {'app': 'web', 'label': u'Formularios', 'models': (
+        {'model': 'web.Contacto', 'label': u'Contacto'},
+        {'model': 'web.MovilizarEmpresa', 'label': u'Movilizar a tu Empresa'},
+
+    )},
     # Reorder app models
 
     # models with custom name
 
 )
-THUMBNAIL_HIGH_RESOLUTION = True
-THUMBNAIL_PROCESSORS = (
-    'easy_thumbnails.processors.colorspace',
-    'easy_thumbnails.processors.autocrop',
-    #'easy_thumbnails.processors.scale_and_crop',
-    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
-    'easy_thumbnails.processors.filters',
-)
-FILER_CANONICAL_URL = 'sharing/'
+FILEBROWSER_MAX_UPLOAD_SIZE = 26214400  # 25 MB
+FILEBROWSER_NORMALIZE_FILENAME = True
+FILEBROWSER_OVERWRITE_EXISTING = False
+FILEBROWSER_LIST_PER_PAGE = 25
+
+FILEBROWSER_SHOW_PLACEHOLDER = True
+FILEBROWSER_PLACEHOLDER = 'no-disponible/no-disponible.png'
+FILEBROWSER_EXTENSIONS = {
+    'Folder': [''],
+    'Image': ['.jpg', '.jpeg', '.gif', '.png', '.tif', '.tiff'],
+    'Document': ['.pdf', '.doc', '.rtf', '.txt', '.xls', '.csv', '.swf'],
+    'Video': ['.mov', '.wmv', '.mpeg', '.mpg', '.avi'],
+    'Audio': ['.mp3', '.mp4', '.wav', '.aiff', '.midi', '.m4p']
+}
+
+FILEBROWSER_SELECT_FORMATS = {
+    'file': ['Folder', 'Image', 'Document', 'Video', 'Audio'],
+    'image': ['Image'],
+    'document': ['Document'],
+    'media': ['Video', 'Audio'],
+}
+FILEBROWSER_SHOW_IN_DASHBOARD = False
