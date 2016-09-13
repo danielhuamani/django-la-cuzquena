@@ -1,0 +1,43 @@
+{% extends "common/base.html" %}
+{% load static %}
+{% load thumbnail %}
+{% block content %}
+      <section class="banner-page">
+        <div class="detail-banner"></div>
+        <div class="container">
+          <div class="banner-image"><img src="{{servicios.banner.url}}" alt=""/></div>
+        </div>
+      </section>
+      <section class="servicios-pages">
+        <div class="container">
+          <h3>Servicios</h3>
+        </div>
+        <div class="content-servicios">
+          {% for servicio in nuestros_servicios %}
+            <div class="servicio {% cycle 'left' 'right' %}">
+              <div class="content-text">
+                <div class="content">
+                  <h4>
+                    {{servicio.titulo}}
+
+                  </h4>
+                  <div class="text">{{servicio.descripcion|safe}}</div>
+                </div>
+              </div>
+              <div class="image">
+                <figure>
+                {% thumbnail servicio.imagen.path "315x175" as im %}
+                <img src="{{im.url}}" alt=""/>
+                </figure>
+                <div class="num">{{forloop.counter}}.</div>
+              </div>
+            </div>
+
+          {% endfor %}
+
+
+        </div>
+      </section>
+{% endblock content %}
+{% block js %}
+{% endblock js %}

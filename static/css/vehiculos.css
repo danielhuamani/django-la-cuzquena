@@ -1,0 +1,133 @@
+section.vehiculos-pages {
+  margin-bottom: 75px;
+}
+section.vehiculos-pages .overlay-block {
+  display: block !important;
+}
+section.vehiculos-pages .overlay {
+  display: none;
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+}
+section.vehiculos-pages h3 {
+  color: c-azul;
+  font-size: 35px;
+  font-family: semibold;
+  margin-bottom: 0px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+section.vehiculos-pages .content-vehiculos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section.vehiculos-pages .content-vehiculos .vehiculos:hover:after {
+  opacity: 1;
+}
+section.vehiculos-pages .content-vehiculos .vehiculos {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease all;
+}
+section.vehiculos-pages .content-vehiculos .vehiculos figure img {
+  display: block;
+}
+section.vehiculos-pages .content-vehiculos .vehiculos:after {
+  opacity: 0;
+  transition: 0.3s ease all;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-image: url("../img/vehiculos-hover.png");
+}
+section.pop-vehiculos .pop {
+  display: none;
+  width: 700px;
+  position: relative;
+  text-align: center;
+}
+section.pop-vehiculos .pop .icon-cross {
+  position: absolute;
+  right: -10px;
+  cursor: pointer;
+  top: -10px;
+  font-size: 18px;
+  z-index: 300;
+  color: c-blanco;
+  background: c-amarillo;
+  transition: 0.2s ease all;
+  padding: 6px;
+  border-radius: 50%;
+}
+section.pop-vehiculos .pop .icon-cross:hover {
+  background: c-azul;
+}
+section.pop-vehiculos .pop .content {
+  padding: 10px 10px 20px 10px;
+  background: c-blanco;
+  position: relative;
+}
+section.pop-vehiculos .pop .text {
+  padding-top: 15px;
+  width: 100%;
+  background: c-blanco;
+  color: c-plomo;
+  font-size: 14px;
+  font-family: regular;
+}
+section.pop-vehiculos .pop figure {
+  width: 700px;
+  background: c-blanco;
+}
+section.pop-vehiculos .pop figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+section.pop-vehiculos .pop-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  position: fixed;
+  flex-direction: column;
+  height: 100%;
+  left: 0px;
+  right: 0px;
+  z-index: 300;
+  margin: auto;
+}
+section.pop-vehiculos .pop-active figure {
+  margin: 0px;
+}
+@media (max-width: 960px) {
+  section.pop-vehiculos .pop {
+    width: 80%;
+  }
+  section.pop-vehiculos .pop figure {
+    width: 100%;
+  }
+  section.vehiculos-pages h3 {
+    text-align: center;
+  }
+  section.vehiculos-pages .content-vehiculos {
+    justify-content: space-around;
+  }
+}
+@media (max-width: 768px) {
+  section.pop-vehiculos .pop .text {
+    font-size: 13px;
+  }
+}

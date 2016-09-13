@@ -1,0 +1,124 @@
+
+section.info-pages
+    text-align left
+    &.contact
+        margin-bottom 45px
+    .contact-us
+        text-align left
+        .contact-main
+            text-align left
+            width 100%
+            .main-title
+                color c-azul
+                font-size 35px
+                font-family: semibold
+            .container-section
+                display flex
+                justify-content space-between
+                .text-section
+                    padding 20px 0 0 0
+                    .block-contact
+                        padding 5px 0 20px 0
+                        display flex
+                        justify-content space-between
+                        .icon-contacts
+                            text-align center
+                            min-width 60px
+                        .info-contact
+                            text-align left
+                            h4
+                                text-align left
+                                font-family bold
+                                color c-azul
+                                font-size 17px
+                                margin 0 0 7px 0
+                            p.text-detail
+                                text-align left
+                                font-size 14px
+                                font-family regular
+                                color c-gris
+                                line-height 1.3em
+            .form-section
+                padding 30px 0 0 0
+                width 50%
+                label
+                    margin: -5px 0 10px 0;
+                    position: relative;
+                    display: block;
+                    font-size: 12px;
+                    color: red;
+                .formgroup
+                    padding 0 15px
+                    input
+                        width 100%
+                        padding 10px 15px
+                        border-radius 15px
+                        border 1px solid transparent
+                        margin 0 0 15px -15px
+                        background-color c-light
+                        font-family regular
+                        font-size 14px
+                        color c-gris
+                    textarea
+                        border-radius 15px
+                        width 100%
+                        max-width 100%
+                        padding 15px
+                        border 1px solid transparent
+                        background-color c-light
+                        font-family regular
+                        font-size 14px
+                        min-height 120px
+                        color c-gris
+                        margin 0 0 15px -15px
+                    p
+                        font-size 11px
+                        color c-gris
+                        margin 10px
+                        display inline-block
+                        margin 0 0 15px -15px
+                button
+                    font-size 14px
+                    background-color c-amarillo
+                    color c-azul
+                    border-radius 20px
+                    border 1px solid transparent
+                    font-family bold
+                    padding 5px 10px 5px 20px
+                    margin 0 -15px 0 0
+                    float right
+                    & .only-hover
+                        display none
+                        padding-left 8px
+                    & .only-normal
+                        display inline-block
+                        padding-left 8px
+                    &:hover
+                        background-color c-azul
+                        color c-white
+                        & .only-hover
+                            display inline-block
+                        & .only-normal
+                            display none
+            h3.main-title
+                text-align left
+
+@media (max-width: 960px)
+    section.info-pages
+        .contact-us
+            .contact-main
+                h3.main-title
+                    text-align center
+                .container-section
+                    display block
+                    .text-section
+                        width 100%
+                        display block
+                        .block-contact
+                            justify-content center
+                        .info-contacts
+                            text-align left
+                            width 100%
+                    .form-section
+                        width 100%
+                        display block

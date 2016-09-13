@@ -44,7 +44,6 @@ THIRD_PARTY_APPS = [
     'admin_reorder',
     'django_summernote',
     'easy_thumbnails',
-
     'filebrowser',
 ]
 
@@ -68,6 +67,7 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'my_apps.web.processors.processors_site'
             ],
         },
     },

@@ -1,0 +1,26 @@
+<header>
+  <div class="container">
+    <div class="icon-menu menu"></div>
+    <div class="icon-cross close"></div>
+    <div class="overlay"></div><a href="{% url 'web:home' %}" class="container-log">
+      <figure class="logo"><img src="{{STATIC_URL}}img/logo.png" width="117" height="117" alt=""/></figure>
+      <figure class="logo-text"><img src="{{STATIC_URL}}img/text-logo-azul.png" alt=""/></figure></a>
+    <div class="nav-principal">
+      <nav>
+        <ul>
+          <li><a href="{% url 'web:nosotros' %}">Nosotros</a></li>
+          <li><a href="{% url 'web:servicios' %}">
+              Servicios
+              </a></li>
+          <li><a href="vehiculos.html">Vehículos</a></li>
+          <li><a href="contacto.html">
+              Contacto
+              </a></li>
+        </ul>
+      </nav>
+      <div class="container-telephone">
+        <figure><img src="../../static/img/telefono.png" alt=""/></figure><a href="">(511) 456 - 3456</a>
+      </div>
+    </div>
+  </div>
+</header>

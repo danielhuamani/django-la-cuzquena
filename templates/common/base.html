@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Document</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{STATIC_URL}}css/styles.css"/>
+    {% block css %}
+
+    {% endblock css %}
+  </head>
+  <body>
+    <div class="wrapper">
+      {% include "common/header.html" %}
+      {% block content %}
+
+      {% endblock content %}
+      {% include "common/footer.html" %}
+
+    </div>
+    <script src="{{STATIC_URL}}js/jquery.js"></script>
+    <script src="{{STATIC_URL}}js/main.js"></script>
+    {% block js %}
+
+    {% endblock js %}
+  </body>
+</html>

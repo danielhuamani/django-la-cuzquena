@@ -5,7 +5,7 @@ from singlemodeladmin import SingleModelAdmin
 from .models import Configuracion, Home, HomeBanner, Nosotros, Valores, Servicios, NuestrosServicios, Vehiculos, Contacto, MovilizarEmpresa
 
 
-class ConfiguracionAdmin(admin.ModelAdmin):
+class ConfiguracionAdmin(SingleModelAdmin):
     fieldsets = (
         (None, {
             'fields': ('telefono', 'correos', 'direccion', 'ciudad', 'mapa')

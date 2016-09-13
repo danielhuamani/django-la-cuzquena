@@ -1,0 +1,146 @@
+{% extends "common/base.html" %}
+{% load static %}
+{% load thumbnail %}
+{% block content %}
+
+
+<section class="banner">
+  <div class="detail-banner"></div>
+  <div class="container-slider">
+    {% for banner in banners %}
+
+    <div style="background-image:url('{{ banner.banner.url }}')" class="slider">
+      <div class="content">
+        <div class="container-text">
+          <h3 class="title">{{banner.titulo}}</h3>
+          <h4 class="sub-title">{{banner.subtitulo}}</h4>
+          <div class="text">{{banner.descripcion|safe}}</div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</section>
+<section class="info-pages">
+  <div class="container">
+    <div class="page">
+      <h3>NOSOTROS</h3>
+      <figure>
+        {% thumbnail home.nosotros_image.path "288x160" as im %}
+        <img src="{{ im.url }}" alt="" />
+      </figure>
+      <div class="text">{{home.nosotros|safe}}</div><a href="nosotros.html">
+        Ver más
+        <i class="icon-arrow-right"></i></a>
+    </div>
+    <div class="page">
+      <h3>SERVICIOS</h3>
+      <figure>
+        {% thumbnail home.servicios_image.path "288x160" as im %}
+        <img src="{{ im.url }}" alt="" />
+      </figure>
+      <div class="text">
+        {{home.servicios|safe}}
+      </div>
+      <a href="servicios.html">
+        Ver más
+        <i class="icon-arrow-right"></i></a>
+    </div>
+    <div class="page">
+      <h3>VEHÍCULOS</h3>
+      <figure>
+        {% thumbnail home.vehiculos_image.path "288x160" as im %}
+        <img src="{{ im.url }}" alt="" />
+
+      </figure>
+      <div class="text">
+      {{home.vehiculos|safe}}
+      </div>
+        <a href="vehiculos.html">
+        Ver más
+        <i class="icon-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+<section class="servicio-ventas">
+  <div class="container">
+    <div class="servicio item">
+      <div class="text">
+        <h3>Servicio</h3>
+        <h4>LUBICENTRO Y LAVADO DE AUTOS</h4>
+      </div>
+      <figure><img src="{{STATIC_URL}}img/lubicentro.png" alt=""/></figure>
+    </div>
+    <div class="ventas item">
+      <div class="text">
+        <h3>Venta de</h3>
+        <h4>LLANTAS DE RESPUESTO</h4>
+      </div>
+      <figure><img src="{{STATIC_URL}}img/llanta.png" alt=""/></figure>
+    </div>
+  </div>
+</section>
+<section class="contacto-empresa">
+  <div class="container">
+    <div class="formulario">
+      <h2>
+        <span>
+        	¿Quieres movilizar
+        </span>
+        A TU EMPRESA?
+      </h2>
+      <div class="text">Déjanos tus datos y nos comunicaremos contigo:</div>
+      <form>
+        <div class="cnt-input">
+          <div class="input">
+            <input type="text" placeholder="Nombre"/>
+          </div>
+          <div class="input">
+            <input type="text" placeholder="Correo"/>
+          </div>
+          <div class="input">
+            <textarea name="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+          </div>
+        </div>
+        <div class="button">
+          <button>
+            enviar
+            <i class="icon-arrow-right"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+    <figure><img src="{{STATIC_URL}}img/movilizar.png" alt=""/></figure>
+  </div>
+</section>
+{% endblock content %}
+{% block js %}
+
+<script src="{{STATIC_URL}}js/jquery.bxslider.min.js"></script>
+<script>
+  $(document).ready(function(){
+
+  	$('.container-slider').bxSlider({
+  		mode:"fade",
+  		auto: true,
+  		pause: '3000',
+  		pager: true,
+  		controls: false,
+  		adaptiveHeight: true,
+  		onSliderLoad: function(currentIndex) {
+  				$('.js-b1slider').children().eq(currentIndex).addClass('active');
+
+  			},
+  			onSlideBefore: function($slideElement){
+  			  setTimeout( function(){
+
+  				  $slideElement.addClass('active');
+
+  			  },1000);
+  			  $('.js-b1slider').children().removeClass('active');
+
+  			}
+  	});
+  });
+</script>
+{% endblock js %}

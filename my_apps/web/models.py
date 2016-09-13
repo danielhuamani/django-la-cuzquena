@@ -20,16 +20,17 @@ class Configuracion(models.Model):
         verbose_name = "Configuracion"
         verbose_name_plural = "Configuraciones"
 
-    def __str__(self):
-        pass
+    def __unicode__(self):
+        return "Configuracion"
 
 
 class HomeBanner(models.Model):
+    posicion = models.IntegerField(u"Posicion", default=0)
     banner = FileBrowseField("Home Banner", max_length=200, directory='home_banner/',
         extensions=['.jpg', '.png', '.gif'])
     titulo = models.CharField("Titulo", max_length=60)
-    subtitulo = models.CharField("Sub-Titulo", max_length=60)
-    descripcion = models.TextField(u"Descripción")
+    subtitulo = models.CharField("Sub-Titulo", max_length=60, blank=True)
+    descripcion = models.TextField(u"Descripción", blank=True)
 
     class Meta:
         verbose_name = "Home Banner"
@@ -64,7 +65,7 @@ class Nosotros(models.Model):
 
     nosotros_amarillo = models.TextField(u"Nosotros texto amarillo")
     nosotros_plomo= models.TextField(u"Nosotros texto plomo")
-    banner = FileBrowseField("Banner", max_length=200, directory='nosotros/',
+    image = FileBrowseField("Nosotros Imagen", max_length=200, directory='nosotros/',
         extensions=['.jpg', '.png', '.gif'])
     mision = models.TextField(u"Misión")
     vision = models.TextField(u"Visión")
@@ -108,7 +109,7 @@ class Servicios(models.Model):
 class NuestrosServicios(models.Model):
     posicion = models.IntegerField(u"Posicion", default=0)
     servicio = models.ForeignKey(Servicios, related_name="servicios_valores")
-    imagen = FileBrowseField("Servicios", max_length=200, directory='servicios/',
+    imagen = FileBrowseField("Imagen", max_length=200, directory='servicios/',
         extensions=['.jpg', '.png', '.gif'])
     titulo = models.CharField("Titulo", max_length=120)
     descripcion = models.TextField(u"Descripción")
@@ -136,6 +137,7 @@ class Vehiculos(models.Model):
 
 
 class Contacto(models.Model):
+    creado = models.DateTimeField("Creado", auto_now_add=True)
     nombre = models.CharField("Nombre", max_length=120)
     telefono = models.CharField("Telefono", max_length=20)
     Correo = models.EmailField("Correo")
@@ -150,6 +152,7 @@ class Contacto(models.Model):
 
 
 class MovilizarEmpresa(models.Model):
+    creado = models.DateTimeField("Creado", auto_now_add=True)
     nombre = models.CharField("Nombre", max_length=120)
     Correo = models.EmailField("Correo")
     mensaje = models.TextField("Mensaje")

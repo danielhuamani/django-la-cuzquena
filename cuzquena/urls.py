@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^summernote/', include('django_summernote.urls')),
     url(r'^admin/filebrowser/', include(site.urls)),
+    url(r'', include('my_apps.web.urls', namespace='web')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

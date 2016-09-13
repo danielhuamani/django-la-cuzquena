@@ -1,0 +1,130 @@
+section.servicios-pages h3 {
+  color: c-azul;
+  font-size: 35px;
+  font-family: semibold;
+  margin-bottom: 0px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+section.servicios-pages .content-servicios {
+  margin-top: 10px;
+}
+section.servicios-pages .content-servicios .left {
+  flex-direction: row;
+}
+section.servicios-pages .content-servicios .left .content-text .content {
+  float: right;
+  border-left: 2px solid c-amarillo;
+  padding-right: 30px;
+  padding-left: 10px;
+}
+section.servicios-pages .content-servicios .left .image {
+  padding: 15px 0px 15px 15px;
+}
+section.servicios-pages .content-servicios .left .image figure {
+  margin: 0px;
+  margin-right: 10px;
+}
+section.servicios-pages .content-servicios .right {
+  flex-direction: row-reverse;
+}
+section.servicios-pages .content-servicios .right .image {
+  padding: 15px 15px 15px 0px;
+  flex-direction: row-reverse;
+}
+section.servicios-pages .content-servicios .right .image figure {
+  margin: 0px;
+  margin-left: 10px;
+}
+section.servicios-pages .content-servicios .right .content-text .content {
+  padding-left: 30px;
+  padding-right: 10px;
+  float: left;
+  border-right: 2px solid c-amarillo;
+}
+section.servicios-pages .content-servicios .servicio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+section.servicios-pages .content-servicios .servicio .content-text {
+  width: 49%;
+}
+section.servicios-pages .content-servicios .servicio .content-text .content {
+  width: 380px;
+}
+section.servicios-pages .content-servicios .servicio .content-text .content h4 {
+  color: c-azul;
+  font-family: bold;
+  font-size: 18px;
+}
+section.servicios-pages .content-servicios .servicio .content-text .content .text {
+  font-size: 14px;
+  color: c-plomo;
+  font-family: regular;
+}
+section.servicios-pages .content-servicios .servicio .image {
+  width: 51%;
+  background: c-plomo-claro;
+  display: flex;
+  align-items: center;
+}
+section.servicios-pages .content-servicios .servicio .image .num {
+  font-size: 78px;
+  font-family: extbold;
+  color: #d8d8d8;
+}
+@media (max-width: 960px) {
+  section.servicios-pages .container {
+    justify-content: center !important;
+  }
+  section.servicios-pages .container h3 {
+    text-align: center;
+  }
+  section.servicios-pages .content-servicios .servicio {
+    flex-direction: column;
+  }
+  section.servicios-pages .content-servicios .servicio .content-text {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  section.servicios-pages .content-servicios .servicio .content-text .content {
+    float: none;
+    margin: auto;
+    border: none;
+  }
+  section.servicios-pages .content-servicios .servicio .image {
+    justify-content: center;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  section.servicios-pages .content-servicios .right .image {
+    padding: 15px 0px 15px 0px;
+  }
+  section.servicios-pages .content-servicios .right .image figure {
+    margin-right: 0px;
+  }
+  section.servicios-pages .content-servicios .left .image {
+    padding: 15px 0px 15px 0px;
+  }
+  section.servicios-pages .content-servicios .left .image figure {
+    margin-right: 0px;
+  }
+  section.servicios-pages .content-servicios .servicio .content-text .content {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  section.servicios-pages .content-servicios .servicio .image {
+    flex-direction: column;
+  }
+  section.servicios-pages .content-servicios .servicio .image .num {
+    font-size: 32px;
+  }
+}
+@media (max-width: 480px) {
+  section.servicios-pages .content-servicios .servicio .content-text .content {
+    width: 280px;
+  }
+}

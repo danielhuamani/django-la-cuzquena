@@ -1,0 +1,432 @@
+//colores
+c-azul = #1f2f79
+c-amarillo = #fcb61f
+c-black = #000
+c-white = #ffffff
+c-plomo = #828281
+c-gris = #6f6f6e
+c-blanco = #ffffff
+c-plomo-claro = #ebebeb
+c-plomo-sombra = #c5c5c4
+c-light = #ebebeb
+
+semibold = 'proxima_novasemibold';
+regular = 'proxima_nova_rgregular';
+italic = 'proxima_novalight_italic';
+extbold = 'proxima_novaextrabold';
+bold = 'proxima_nova_rgbold';
+
+@import 'nib'
+@import 'fonts'
+@import 'normalize.styl'
+@import 'base.styl'
+@import 'header-footer.styl'
+@import 'nosotros.styl'
+@import 'contacto.styl'
+@import 'servicios.styl'
+@import 'vehiculos.styl'
+//fuente
+
+
+
+
+section.banner
+    position relative
+    .detail-banner
+        width: 100%;
+        height: 9px;
+        background-image: url("../img/detail-square.png");
+        position: absolute;
+        bottom: -4px;
+        left: 0px;
+        z-index: 100
+    .bx-viewport
+        height 360px !important
+    .bx-wrapper
+        position relative
+        .bx-pager.bx-default-pager
+
+            position absolute
+            bottom 20px
+            z-index 200
+            left 0
+            right -890px
+            width 15px
+            margin auto
+
+            a
+                position relative
+                text-indent -99999px
+                outline 0
+                display inline-block
+
+                width 18px
+                height 18px
+                border 1px solid transparent
+                border-radius 50%
+                margin 2px 0px
+                &:after
+                    content ""
+                    position absolute
+                    width 12px
+                    height 12px
+                    right 0
+                    left 0
+                    top 3px
+                    background-color c-black
+                    margin auto
+                    border-radius 50%
+            a.active, a:hover
+                border-color #fff
+                &:after
+                    background white
+    .container-slider
+        height 100%
+        .slider
+            height 100%
+            margin-right 40%
+            background-size cover
+            background-position-x -70px
+            font-size 0
+            figure
+                display inline-block
+                vertical-align top
+                width 70%
+                img
+                    width 100%
+            .content
+                height 100%
+                display inline-block
+                vertical-align top
+                float right
+                background c-amarillo
+                width 48%
+                padding-top 40px
+                padding-bottom 20px
+                box-sizing border-box
+                position relative
+                &:after
+                    content ""
+                    width 0
+                    height 0
+                    border-top 360px solid c-amarillo
+                    border-left 50px solid transparent
+                    position absolute
+                    right 100%
+                    top 0px
+                .container-text
+                    max-width 380px
+                    text-align right
+                    overflow hidden
+                    .title
+                        font-size 50px
+                        color white
+                        font-family bold
+                    .sub-title
+                        font-size 50px
+                        font-family italic
+                    .text
+                        max-width 320px
+                        float right
+                        font-size 15px
+                        font-family regular
+                        color c-black
+
+section.info-pages
+    margin-top 45px
+    margin-bottom 75px
+    .container
+        display flex
+        justify-content space-between
+        .page:first-child
+            margin-left 0px
+        .page:last-child
+            margin-right 0px
+        .page
+            margin 0px 5px
+            text-align center
+            width 30%
+            figure
+                img
+                    width 100%
+                    height auto
+            h3
+                font-family bold
+                font-size 20px
+                color c-azul
+            .text
+                font-family regular
+                font-size 14px
+                color c-plomo
+                margin-top 15px
+                margin-bottom 15px
+            a
+                font-size 15px
+                font-family bold
+                color white
+                background c-azul
+                padding 5px 12px
+                border-radius 12px
+                transition 0.2s ease all
+                &:hover
+                    background c-amarillo
+
+section.servicio-ventas
+    margin-bottom 50px
+    .container
+        display flex
+        justify-content space-between
+        .servicio
+            background-image url("../img/fondo-servicio.png")
+        .ventas
+            background-image url("../img/fondo-ventas.png")
+        .item
+            width 49%
+            background-size cover
+            padding 22px 10px 22px 15px
+            box-sizing border-box
+            position relative
+            figure
+                position absolute
+                bottom -22px
+                right 10px
+                display inline-block
+                vertical-align top
+                img
+                    display block
+                    max-width 100%
+                    height auto
+            .text
+                width 300px
+                display inline-block
+                vertical-align top
+                h3
+                    font-size 32px
+                    font-family regular
+                    color white
+                    margin-bottom 0px
+                h4
+                    font-size 32px
+                    font-family bold
+                    color white
+                    margin-bottom 0px
+
+
+//Map styles
+.map
+    height: 400px
+    overflow: hidden
+    margin: auto
+    #gmap_canvas
+        height: 400px
+        width: 100%
+        visibility visible!important
+        img
+            max-width none!important
+            background none!important
+
+section.contacto-empresa
+    padding-top 30px
+    background-color c-plomo-claro
+    background-image url("../img/patron-edificio.png")
+    background-image url("../img/patron-edificio.png")
+    background-position: bottom
+    background-repeat repeat-x
+    .container
+        display flex
+        figure
+            margin-bottom 0px
+            margin-top -10px
+
+            img
+                display block
+        .formulario
+            .text
+                color c-plomo
+                font-size 14px
+                font-family regular
+                margin-bottom 15px
+            h2
+                font-family bold
+                font-size 25px
+                color c-amarillo
+                span
+                    font-family bold
+                    font-size 22px
+                    color c-azul
+            form
+
+                .cnt-input
+                    display inline-block
+                    .input:first-child
+                        margin-top 0px
+                    .input
+                        margin-top 8px
+                        input
+                            height 35px
+                            box-shadow 3px 4px 0px c-plomo-sombra
+                            font-size 14px
+                            font-family regular
+                            border none
+                            width 320px
+                            border-radius 15px
+                            box-sizing border-box
+                            padding-left 8px
+                        textarea
+                            box-shadow 3px 4px 0px c-plomo-sombra
+                            font-size 14px
+                            font-family regular
+                            border none
+                            width 320px
+                            border-radius 15px
+                            box-sizing border-box
+                            padding-left 8px
+                            padding-top 8px
+                            height 100px
+                .button
+                    display inline-block
+                    vertical-align bottom
+                    margin-left 10px
+                    button
+                        border none
+
+                        background c-amarillo
+                        color c-azul
+                        font-size 15px
+                        padding 5px 15px
+                        border-radius 12px
+                        font-family bold
+                        transition 0.2s ease all
+                        &:hover
+                            color c-blanco
+                            background c-azul
+.icon-arrow-right
+    margin-top -2px
+    margin-left 4px
+    display inline-block
+    vertical-align middle
+
+
+@media (max-width: 960px)
+    section.info-pages
+        margin-top 30px
+    section.banner
+        .container-slider .slider
+            .content
+                .container-text
+                    width 310px
+                    .title
+                        font-size 34px
+                    .sub-title
+                        font-size 34px
+                    .text
+                        font-size 14px
+        .bx-wrapper .bx-pager.bx-default-pager
+            right -700px
+        .bx-viewport
+            height 300px !important
+    section.servicio-ventas .container
+        flex-direction column
+        .item:first-child
+            margin-bottom 100px
+        .item
+            width 100%
+            .text
+                width 600px
+    section.contacto-empresa
+        padding-bottom 30px
+        .container
+            justify-content space-around
+            figure
+                display none
+            .formulario form .button
+                display block
+                margin-top 20px
+                margin-left 0px
+@media (max-width: 768px)
+    section.banner
+        .container-slider
+            .slider
+                display flex !important
+                .content
+                    margin auto
+                    display block
+                    float none
+                    padding-top 10px
+                    padding-bottom 40px
+                    padding-left 10px
+                    padding-right 10px
+                    height auto
+                    width 320px
+                    &:after
+                        display none
+                    .container-text
+                        text-align center
+                        display block
+                        margin auto
+                        width 100%
+                        .title
+                            font-size 24px
+                        .sub-title
+                            font-size 24px
+                        .text
+                            font-size 14px
+        .bx-wrapper .bx-pager.bx-default-pager
+
+            justify-content center
+            right 0px
+            width 300px
+            text-align center
+            bottom 45px
+            .bx-pager-item
+                margin 0px 5px
+                display inline-block
+
+            a
+                display inline-block
+    section.info-pages
+        margin-bottom 0px
+        .container
+            flex-direction column
+
+            .page
+                width 315px
+                margin auto
+                margin-bottom 40px
+            .page:first-child
+                margin-left inherit
+            .page:last-child
+                margin-right inherit
+
+    section.servicio-ventas
+        margin-bottom 20px
+        .container
+            .item:first-child
+                margin-bottom 20px
+            .item
+                margin-bottom 20px
+                .text
+                    width 100%
+                figure
+                    display none
+
+    section.contacto-empresa
+        padding-bottom 30px
+        .container
+            justify-content space-around
+
+            .formulario
+                width 95%
+                h2
+                    text-align center
+                    font-size 18px
+                    span
+                        font-size 18px
+                form .cnt-input
+                    width 100%
+                    .input
+                        input
+                            width 100%
+                        textarea
+                            width 100%
+

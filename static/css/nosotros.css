@@ -1,0 +1,298 @@
+section.servicio-ventas {
+  margin-bottom: 50px;
+}
+section.servicio-ventas .container {
+  display: flex;
+  justify-content: space-between;
+}
+section.servicio-ventas .container .servicio {
+  background-image: url("../img/fondo-servicio.png");
+}
+section.servicio-ventas .container .ventas {
+  background-image: url("../img/fondo-ventas.png");
+}
+section.servicio-ventas .container .item {
+  width: 49%;
+  background-size: cover;
+  padding: 22px 10px 22px 15px;
+  box-sizing: border-box;
+  position: relative;
+}
+section.servicio-ventas .container .item figure {
+  position: absolute;
+  bottom: -22px;
+  right: 15px;
+  display: inline-block;
+  vertical-align: top;
+}
+section.servicio-ventas .container .item figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+section.servicio-ventas .container .item .text {
+  width: 300px;
+  display: inline-block;
+  vertical-align: top;
+}
+section.servicio-ventas .container .item .text h3 {
+  font-size: 32px;
+  font-family: regular;
+  color: #fff;
+  margin-bottom: 0px;
+}
+section.servicio-ventas .container .item .text h4 {
+  font-size: 32px;
+  font-family: bold;
+  color: #fff;
+  margin-bottom: 0px;
+}
+section.banner-page {
+  background: c-amarillo;
+  position: relative;
+}
+section.banner-page .detail-banner {
+  width: 100%;
+  height: 9px;
+  background-image: url("../img/detail-square.png");
+  position: absolute;
+  bottom: -4px;
+  left: 0px;
+  z-index: 9;
+}
+section.banner-page .banner-image {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+section.banner-page .banner-image:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 212px solid #fcb61f;
+  border-left: 50px solid transparent;
+  position: absolute;
+  right: -1px;
+  top: 0;
+}
+section.banner-page .banner-image:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-bottom: 212px solid #fcb61f;
+  border-right: 50px solid transparent;
+  position: absolute;
+  left: -1px;
+  top: 0;
+}
+section.banner-page .about-us .container {
+  display: flex;
+  justify-content: space-between;
+  overflow: auto;
+}
+section.info-pages .about-us {
+  padding: 0 0 50px 0;
+}
+section.info-pages .about-us .text-section {
+  text-align: left;
+}
+section.info-pages .about-us .text-section .main-title {
+  color: c-azul;
+  font-size: 35px;
+  font-family: semibold;
+}
+section.info-pages .about-us .text-section .text-yellow {
+  color: c-amarillo;
+  font-size: 16px;
+  font-family: regular;
+}
+section.info-pages .about-us .text-section .text {
+  font-family: regular;
+  font-size: 14px;
+  color: c-gris;
+}
+section.info-pages .about-us .image-section {
+  padding: 0 0 0 30px;
+  min-width: 45%;
+}
+section.info-pages .content-our-values .container {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+}
+section.info-pages .content-our-values .container .value {
+  text-align: center;
+  padding: 2% 1%;
+  flex-basis: 23%;
+}
+section.info-pages .content-our-values .container .value .line-yellow {
+  background-color: c-amarillo;
+  height: 3px;
+  width: 95%;
+  margin: auto;
+  display: inline-block;
+}
+section.info-pages .content-our-values .container .value .title-value {
+  color: c-azul;
+  font-size: 17px;
+  font-family: bold;
+  text-transform: uppercase;
+  padding: 20px 0 0;
+}
+section.info-pages .content-our-values .container .value p {
+  font-size: 14px;
+  color: c-gris;
+  font-family: regular;
+}
+section.info-pages .content-other-info {
+  text-align: left;
+  position: relative;
+  margin: 0 0 40px;
+}
+section.info-pages .content-other-info .yellow-frame {
+  background-color: c-amarillo;
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+section.info-pages .content-other-info .blue-frame {
+  background-color: c-azul;
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+section.info-pages .content-other-info .mision-side {
+  background-color: c-amarillo;
+  background-image: url("../img/nosotros-01_14.png");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 10;
+  padding: 40px 100px 30px 0;
+  text-align: left;
+  min-height: 150px;
+}
+section.info-pages .content-other-info .mision-side:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-bottom: 220px solid c-amarillo;
+  border-right: 50px solid transparent;
+  position: absolute;
+  left: 100%;
+  top: 0px;
+}
+section.info-pages .content-other-info .mision-side h3.title {
+  color: c-azul;
+  font-size: 25px;
+  font-family: semibold;
+  margin: 0 0 15px 0;
+}
+section.info-pages .content-other-info .vision-side {
+  background-color: c-azul;
+  background-image: url("../img/nosotros-01_11.png");
+  background-position: left 50px center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 9;
+  padding: 40px 0 30px 140px;
+  text-align: right;
+  min-height: 150px;
+}
+section.info-pages .content-other-info .vision-side h3.title {
+  color: c-amarillo;
+  font-size: 25px;
+  font-family: semibold;
+  margin: 0 0 15px 0;
+}
+section.info-pages .content-other-info p {
+  color: c-blanco;
+  font-size: 14px;
+  font-family: regular;
+}
+@media (max-width: 960px) {
+  .banner-page .banner-image {
+    min-height: auto !important;
+    height: auto !important;
+    display: inline-block !important;
+  }
+  .banner-page .banner-image:before {
+    display: none;
+  }
+  .banner-page .banner-image:after {
+    display: none;
+  }
+  .banner-page .banner-image img {
+    max-width: 100%;
+  }
+  section.info-pages .about-us .text-section {
+    text-align: center;
+    padding: 10px;
+  }
+  section.info-pages .about-us .image-section {
+    padding: 10px;
+    text-align: center;
+  }
+  section.info-pages .about-us .image-section img {
+    max-width: 100%;
+    margin: 0;
+  }
+  section.info-pages .content-other-info {
+    padding: 0 0 4px 0;
+  }
+  section.info-pages .content-other-info .mision-side:after {
+    display: none;
+  }
+  section.info-pages .content-other-info .yellow-frame {
+    background: transparent;
+  }
+  section.info-pages .content-other-info .blue-frame {
+    background: transparent;
+  }
+  section.info-pages .content-other-info .mision-side {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  section.info-pages .content-other-info .vision-side {
+    padding: 40px 20px;
+    text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .content-our-values .container {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .content-our-values .container .value {
+    text-align: center;
+    padding: 2% 1%;
+    flex-basis: 48% !important;
+  }
+  .banner-page .banner-image {
+    overflow: hidden;
+    display: block !important;
+    min-height: 210px !important;
+    top: 0;
+    left: 0;
+    position: relative;
+    right: 80%;
+  }
+  .banner-page .banner-image:before {
+    display: none;
+  }
+  .banner-page .banner-image:after {
+    display: none;
+  }
+  .banner-page .banner-image img {
+    max-width: inherit;
+    position: absolute;
+    right: -5%;
+  }
+}
