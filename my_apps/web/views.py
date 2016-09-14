@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import HomeBanner, Home, Nosotros, Valores, Servicios, NuestrosServicios
+from .models import HomeBanner, Home, Nosotros, Valores, Servicios, NuestrosServicios, Vehiculos, VehiculoBanner, ContactoBanner
 
 
 def home(request):
@@ -12,10 +12,25 @@ def home(request):
 def nosotros(request):
     valores = Valores.objects.all().order_by("posicion")
     nosotros, create = Nosotros.objects.get_or_create(pk=1)
+    HEAD = "NOSOTROS"
     return render(request, "web/nosotros.html", locals())
 
 
 def servicios(request):
     nuestros_servicios = NuestrosServicios.objects.all().order_by("posicion")
     servicios, create = Servicios.objects.get_or_create(pk=1)
+    HEAD = "SERVICIOS"
     return render(request, "web/servicios.html", locals())
+
+
+def vehiculos(request):
+    vehiculos = Vehiculos.objects.all().order_by("posicion")
+    banner, create = VehiculoBanner.objects.get_or_create(pk=1)
+    HEAD = "VEHICULOS"
+    return render(request, "web/vehiculos.html", locals())
+
+
+def contacto(request):
+    banner, create = ContactoBanner.objects.get_or_create(pk=1)
+    HEAD = "CONTACTO"
+    return render(request, "web/contacto.html", locals())

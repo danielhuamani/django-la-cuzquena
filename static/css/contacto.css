@@ -126,6 +126,84 @@ section.info-pages .contact-us .contact-main .form-section button:hover .only-no
 section.info-pages .contact-us .contact-main h3.main-title {
   text-align: left;
 }
+.overlay-block {
+  display: block !important;
+}
+.overlay {
+  display: none;
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+}
+section.pop-contacto .pop {
+  display: none;
+  width: 700px;
+  position: relative;
+  text-align: center;
+}
+section.pop-contacto .pop .icon-cross {
+  position: absolute;
+  right: -10px;
+  cursor: pointer;
+  top: -10px;
+  font-size: 18px;
+  z-index: 300;
+  color: c-blanco;
+  background: c-amarillo;
+  transition: 0.2s ease all;
+  padding: 6px;
+  border-radius: 50%;
+}
+section.pop-contacto .pop .icon-cross:hover {
+  background: c-azul;
+}
+section.pop-contacto .pop .content {
+  padding: 30px 20px 40px 20px;
+  background: c-blanco;
+  position: relative;
+}
+section.pop-contacto .pop .text {
+  padding-top: 15px;
+  width: 100%;
+  background: c-blanco;
+  color: c-plomo;
+  font-size: 14px;
+  font-family: regular;
+}
+section.pop-contacto .pop figure {
+  width: 700px;
+  background: c-blanco;
+}
+section.pop-contacto .pop figure img {
+  height: auto;
+  display: block;
+}
+section.pop-contacto .pop h3 {
+  margin: 30px 0 10px;
+  font-size: 26px;
+  font-family: bold;
+  color: c-azul;
+}
+section.pop-contacto .pop-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  position: fixed;
+  flex-direction: column;
+  height: 100%;
+  left: 0px;
+  right: 0px;
+  z-index: 300;
+  margin: auto;
+}
+section.pop-contacto .pop-active figure {
+  margin: 0px;
+}
 @media (max-width: 960px) {
   section.info-pages .contact-us .contact-main h3.main-title {
     text-align: center;

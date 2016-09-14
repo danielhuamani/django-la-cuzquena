@@ -24,6 +24,32 @@ jQuery(document).ready(function($) {
 			$(".vehiculos-pages .overlay").removeClass('overlay-block')
 		});
 	}
+	if($(".send").length > 0){
+
+		$(".send").click(function(event) {
+			/* Act on the event */
+			var valor_data = $(this).attr('data-envio');
+			console.log(valor_data);
+			var class_active = "."+valor_data
+			/*$(".pop-active").removeClass('pop-active');*/
+			$(class_active).addClass('pop-active');
+			$(".overlay").addClass('overlay-block')
+		});
+
+		$(".icon-cross").click(function(event) {
+			/* Act on the event */
+			$(".pop-active").removeClass('pop-active');
+			console.log($("vehiculos-pages .overlay"))
+			$(".overlay").removeClass('overlay-block')
+
+		});
+		$(".vehiculos-pages .overlay").click(function(event) {
+			/* Act on the event */
+			console.log($(this))
+			$(".pop-active").removeClass('pop-active');
+			$(".overlay").removeClass('overlay-block')
+		});
+	}
 	$("header .overlay").click(function(event) {
 
 		$(".icon-menu").removeClass('res-menu-des')
@@ -49,4 +75,11 @@ jQuery(document).ready(function($) {
 	    $(".nav-principal").removeClass('nav-principal-active')
 		/* Act on the event */
 	});
+
+	if($(".content-other-info").length > 0){
+		$triangle_size = $(".content-other-info").outerHeight();
+		console.log($triangle_size);
+		$('<style>.mision-side:after{border-bottom:'+$triangle_size+'px solid #fcb61f!important}</style>')
+		.appendTo('head');
+	}
 });

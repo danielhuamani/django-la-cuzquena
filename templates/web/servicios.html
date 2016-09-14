@@ -1,5 +1,5 @@
 {% extends "common/base.html" %}
-{% load static %}
+{% load static app_tags %}
 {% load thumbnail %}
 {% block content %}
       <section class="banner-page">
@@ -29,7 +29,7 @@
                 {% thumbnail servicio.imagen.path "315x175" as im %}
                 <img src="{{im.url}}" alt=""/>
                 </figure>
-                <div class="num">{{forloop.counter}}.</div>
+                <div class="num">{{forloop.counter|counter_cero}}.</div>
               </div>
             </div>
 

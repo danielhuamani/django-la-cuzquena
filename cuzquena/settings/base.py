@@ -153,12 +153,18 @@ ADMIN_REORDER = (
 
     )},
     {'app': 'web', 'label': u'Servicios', 'models': (
-        {'model': 'web.Servicios', 'label': u'Servicios'},
+        {'model': 'web.Servicios', 'label': u'Servicios Banner'},
         {'model': 'web.NuestrosServicios', 'label': u'Nuestros Servicios'},
 
     )},
     {'app': 'web', 'label': u'Vehiculos', 'models': (
+        {'model': 'web.VehiculoBanner', 'label': u'Banner'},
         {'model': 'web.Vehiculos', 'label': u'Vehiculos'},
+
+
+    )},
+    {'app': 'web', 'label': u'Contacto', 'models': (
+        {'model': 'web.ContactoBanner', 'label': u'Banner'},
 
 
     )},

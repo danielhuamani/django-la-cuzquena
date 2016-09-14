@@ -19,8 +19,12 @@
     </div>
     <script src="{{STATIC_URL}}js/jquery.js"></script>
     <script src="{{STATIC_URL}}js/main.js"></script>
+    <script>
+      jQuery(document).ready(function($) {
+        $("#{{HEAD}}").closest('li').addClass('active')
+      });
+    </script>
     {% block js %}
-
     {% endblock js %}
   </body>
 </html>

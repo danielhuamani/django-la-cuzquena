@@ -1,44 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <title>Document</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../static/css/styles.css"/>
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <div class="container">
-          <div class="icon-menu menu"></div>
-          <div class="icon-cross close"></div>
-          <div class="overlay"></div><a href="index.html" class="container-log">
-            <figure class="logo"><img src="../../static/img/logo.png" width="117" height="117" alt=""/></figure>
-            <figure class="logo-text"><img src="../../static/img/text-logo-azul.png" alt=""/></figure></a>
-          <div class="nav-principal">
-            <nav>
-              <ul>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="servicios.html">
-                    Servicios
-                    </a></li>
-                <li><a href="vehiculos.html">Vehículos</a></li>
-                <li><a href="contacto.html">
-                    Contacto
-                    </a></li>
-              </ul>
-            </nav>
-            <div class="container-telephone">
-              <figure><img src="../../static/img/telefono.png" alt=""/></figure><a href="">(511) 456 - 3456</a>
-            </div>
-          </div>
-        </div>
-      </header>
-      <section class="banner-page">
-        <div class="detail-banner"></div>
-        <div class="container">
-          <div class="banner-image"><img src="../../static/img/banner-contacto.png" alt=""/></div>
-        </div>
-      </section>
+{% extends "common/base.html" %}
+{% load static %}
+{% load thumbnail %}
+{% block content %}
+<section class="banner-page">
+  <div class="detail-banner"></div>
+  <div class="container">
+    <div class="banner-image"><img src="{{banner.banner.url}}" alt=""/></div>
+  </div>
+</section>
       <section class="info-pages contact">
         <div class="contact-us">
           <div class="container">
@@ -47,24 +16,24 @@
               <div class="container-section">
                 <div class="text-section">
                   <div class="block-contact">
-                    <div class="icon-contacts"><img src="../../static/img/icon_01.png" alt=""/></div>
+                    <div class="icon-contacts"><img src="{{STATIC_URL}}img/icon_01.png" alt=""/></div>
                     <div class="info-contact">
                       <h4>Ubicanos:</h4>
-                      <p class="text-detail">Cal. Este mza. 9 lote. 1 - Urb. Nuevo Lurín (alt. km 40) <br><b>Lima - Lurin, Peru</b></p>
+                      <p class="text-detail">{{site.direccion}}<br><b>{{site.ciudad}}</b></p>
                     </div>
                   </div>
                   <div class="block-contact">
-                    <div class="icon-contacts"><img src="../../static/img/icon_02.png" alt=""/></div>
+                    <div class="icon-contacts"><img src="{{STATIC_URL}}img/icon_02.png" alt=""/></div>
                     <div class="info-contact">
-                      <h4>Ubicanos:</h4>
-                      <p class="text-detail">Cal. Este mza. 9 lote. 1 - Urb. Nuevo Lurín (alt. km 40) <br></p>
+                      <h4>Llámanos:</h4>
+                      <p class="text-detail">{{site.telefono}}<br></p>
                     </div>
                   </div>
                   <div class="block-contact">
-                    <div class="icon-contacts"><img src="../../static/img/icon_03.png" alt=""/></div>
+                    <div class="icon-contacts"><img src="{{STATIC_URL}}img/icon_03.png" alt=""/></div>
                     <div class="info-contact">
-                      <h4>Ubicanos:</h4>
-                      <p class="text-detail">Cal. Este mza. 9 lote. 1 - Urb. Nuevo Lurín (alt. km 40) <br></p>
+                      <h4>Escríbenos:</h4>
+                      <p class="text-detail">{{site.correos}}<br></p>
                     </div>
                   </div>
                 </div>
@@ -76,7 +45,7 @@
                       <input type="text" placeholder="Correo*" name="correo"/>
                       <textarea placeholder="Mensaje*" name="mensaje"></textarea>
                       <p>*campos obligatorio.</p>
-                      <button type="submit" value="Enviar" class="right-button">
+                      <button type="submit" value="Enviar" data-envio="pop-1" class="right-button send">
                         Enviar
                         <i class="icon-arrow-right"></i>
                       </button>
@@ -93,64 +62,23 @@
           <div id="gmap_canvas"></div><a href="https://embedmaps.org/"></a>
         </div>
       </div>
-      <footer>
-        <div class="footer-top">
-          <div class="container">
-            <div class="pages">
-              <figure><img src="../../static/img/text-logo.png" alt=""/></figure>
-              <ul>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="vehiculos.html">Vehículos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-              </ul>
-            </div>
-            <div class="cnt-address">
-              <h3>Ubicanos</h3>
-              <div class="address">
-                <div class="icon-location"></div>
-                <div class="text">
-                  <p>
-                    Cal. Este mza. 9 lote. 1
-                    Urb. Nuevo Lurín (alt. km 40)
-                  </p>
-                  <div class="location">
-                    Lima - Lurín
-                    
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="cnt-phone">
-              <h3>Llámanos</h3>
-              <div class="text">
-                <div class="icon-icon-phone"></div><a href="">
-                  (511) 456 - 3456
-                  
-                  </a>
-              </div>
-            </div>
-            <div class="redes">
-              <h3>Síguenos</h3>
-              <ul>
-                <li><a href="" class="icon-facebook"></a></li>
-                <li><a href="" class="icon-twitter"></a></li>
-                <li><a href="" class="icon-youtube"></a></li>
-              </ul>
+      <section class="pop-contacto">
+        <div class="pop pop-1">
+          <div class="content">
+            <div class="icon-cross"></div>
+            <figure><img src="{{STATIC_URL}}img/send-contact.png" alt=""/></figure>
+            <h3>¡Gracias, tu mensaje ha sido enviado!</h3>
+            <div class="text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis voluptates, mollitia esse! Dolorem itaque error nihil dicta vel sed esse, illum cupiditate ipsum eius voluptatum voluptatem delectus, atque, enim eveniet!
+
             </div>
           </div>
         </div>
-        <div class="footer-bottom">
-          <div class="container">
-            <h3>La Cuzqueña SAC 2016. Todos los derechos reservados.</h3>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <script src="../../static/js/jquery.js"></script>
-    <script src="../../static/js/main.js"></script>
-    <script src="../../static/js/jquery.validate.min.js"></script>
+      </section>
+{% endblock content %}
+{% block js %}
+
+    <script src="{{STATIC_URL}}js/jquery.validate.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;key=AIzaSyD2YPlowqtNtgh1HXzSJStZ39kLCrzQ0GY"></script>
     <script src="https://embedmaps.com/google-maps-authorization/script.js?id=3aabe127d1872c5bcd44e90cdc5ea241b5d309d0"></script>
     <script>
@@ -160,10 +88,20 @@
           if ($map.length>=1) {
               function init_map()
               {
-             var myOptions = {zoom:16,center:new google.maps.LatLng(-10.674011535798538,-77.81844290305844),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(-10.674011535798538,-77.81844290305844)});infowindow = new google.maps.InfoWindow({content:'<strong>Custom place</strong><br>Jr libertad 137<br> Lima<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}
-              google.maps.event.addDomListener(window, 'load', init_map);
+             var myOptions = {
+                zoom:16,
+                zoomControl: true,
+                scrollwheel      : false,
+                center:new google.maps.LatLng({{site.mapa.latitude|stringformat:".5f"}},{{site.mapa.longitude|stringformat:".5f"}}),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+             map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+             marker = new google.maps.Marker({map: map,position: new google.maps.LatLng({{site.mapa.latitude|stringformat:".5f"}},{{site.mapa.longitude|stringformat:".5f"}})});
+             infowindow = new google.maps.InfoWindow({content:'<br>{{site.direccion}}<br> Lima<br>'});
+             google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}
+            google.maps.event.addDomListener(window, 'load', init_map);
           };
-      
+
           $(".form-contact").validate({
               rules: {
                   nombre: "required",
@@ -188,5 +126,5 @@
           });
       });
     </script>
-  </body>
-</html>
+
+{% endblock js %}

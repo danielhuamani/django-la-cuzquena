@@ -108,7 +108,6 @@ class Servicios(models.Model):
 
 class NuestrosServicios(models.Model):
     posicion = models.IntegerField(u"Posicion", default=0)
-    servicio = models.ForeignKey(Servicios, related_name="servicios_valores")
     imagen = FileBrowseField("Imagen", max_length=200, directory='servicios/',
         extensions=['.jpg', '.png', '.gif'])
     titulo = models.CharField("Titulo", max_length=120)
@@ -122,6 +121,18 @@ class NuestrosServicios(models.Model):
         return u"%s" % (self.titulo)
 
 
+class VehiculoBanner(models.Model):
+    banner = FileBrowseField("Vehiculo Banner", max_length=200, directory='banner/',
+        extensions=['.jpg', '.png', '.gif'])
+
+    class Meta:
+        verbose_name = "VehiculoBanner"
+        verbose_name_plural = "VehiculoBanners"
+
+    def __unicode__(self):
+        return "Vehiculos"
+
+
 class Vehiculos(models.Model):
     posicion = models.IntegerField(u"Posicion", default=0)
     vehiculo = FileBrowseField("Vehiculos Imagen", max_length=200, directory='vehiculos/',
@@ -133,7 +144,20 @@ class Vehiculos(models.Model):
         verbose_name_plural = "Vehiculoss"
 
     def __unicode__(self):
-        return u"%s" % (self.posicion)
+        return "Vehiculos"
+
+
+class ContactoBanner(models.Model):
+    banner = FileBrowseField("Vehiculo Banner", max_length=200, directory='banner/',
+        extensions=['.jpg', '.png', '.gif'])
+
+    class Meta:
+        verbose_name = "ContactoBanner"
+        verbose_name_plural = "ContactoBanners"
+
+    def __unicode__(self):
+        return "Contacto"
+
 
 
 class Contacto(models.Model):

@@ -29,7 +29,7 @@
         {% thumbnail home.nosotros_image.path "288x160" as im %}
         <img src="{{ im.url }}" alt="" />
       </figure>
-      <div class="text">{{home.nosotros|safe}}</div><a href="nosotros.html">
+      <div class="text">{{home.nosotros|safe}}</div><a href="{% url 'web:nosotros' %}">
         Ver más
         <i class="icon-arrow-right"></i></a>
     </div>
@@ -42,7 +42,7 @@
       <div class="text">
         {{home.servicios|safe}}
       </div>
-      <a href="servicios.html">
+      <a href="{% url 'web:servicios' %}">
         Ver más
         <i class="icon-arrow-right"></i></a>
     </div>
@@ -56,7 +56,7 @@
       <div class="text">
       {{home.vehiculos|safe}}
       </div>
-        <a href="vehiculos.html">
+        <a href="{% url 'web:vehiculos' %}">
         Ver más
         <i class="icon-arrow-right"></i></a>
     </div>

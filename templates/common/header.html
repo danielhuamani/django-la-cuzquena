@@ -8,18 +8,18 @@
     <div class="nav-principal">
       <nav>
         <ul>
-          <li><a href="{% url 'web:nosotros' %}">Nosotros</a></li>
-          <li><a href="{% url 'web:servicios' %}">
+          <li><a href="{% url 'web:nosotros' %}" id="NOSOTROS">Nosotros</a></li>
+          <li><a href="{% url 'web:servicios' %}" id="SERVICIOS">
               Servicios
               </a></li>
-          <li><a href="vehiculos.html">Vehículos</a></li>
-          <li><a href="contacto.html">
+          <li><a href="{% url 'web:vehiculos' %}" id="VEHICULOS">Vehículos</a></li>
+          <li><a href="{% url 'web:contacto' %}" id="CONTACTO">
               Contacto
               </a></li>
         </ul>
       </nav>
       <div class="container-telephone">
-        <figure><img src="../../static/img/telefono.png" alt=""/></figure><a href="">(511) 456 - 3456</a>
+        <figure><img src="{{STATIC_URL}}img/telefono.png" alt=""/></figure><a href="">{{site.telefono}}</a>
       </div>
     </div>
   </div>

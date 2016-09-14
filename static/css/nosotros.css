@@ -212,7 +212,7 @@ section.info-pages .content-other-info .vision-side h3.title {
   margin: 0 0 15px 0;
 }
 section.info-pages .content-other-info p {
-  color: c-blanco;
+  color: c-blanco !important;
   font-size: 14px;
   font-family: regular;
 }

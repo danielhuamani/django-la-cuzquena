@@ -20,7 +20,7 @@ section.info-pages
                     .block-contact
                         padding 5px 0 20px 0
                         display flex
-                        justify-content space-between
+                        justify-content flex-start
                         .icon-contacts
                             text-align center
                             min-width 60px
@@ -102,6 +102,75 @@ section.info-pages
                             display none
             h3.main-title
                 text-align left
+
+.overlay-block
+    display block !important
+.overlay
+    display none
+    background rgba(0,0,0,0.7)
+    position fixed
+    left 0
+    top 0
+    z-index 200
+    width 100%
+    height 100%
+section.pop-contacto
+    .pop
+        display none
+        width 700px
+        position relative
+        text-align center
+        .icon-cross
+            position absolute
+            right -10px
+            cursor pointer
+            top -10px
+            font-size 18px
+            z-index 300
+            color c-blanco
+            background c-amarillo
+            transition 0.2s ease all
+            padding 6px
+            border-radius 50%
+            &:hover
+                background c-azul
+        .content
+            padding 30px 20px 40px 20px
+            background c-blanco
+            position relative
+        .text
+            padding-top 15px
+            width 100%
+            background c-blanco
+            color c-plomo
+            font-size 14px
+            font-family regular
+        figure
+            width 700px
+
+            background c-blanco
+            img
+                height auto
+                display block
+        h3
+            margin 30px 0 10px
+            font-size 26px
+            font-family bold
+            color c-azul
+    .pop-active
+        display flex
+        justify-content center
+        align-items center
+        top 0
+        position fixed
+        flex-direction column
+        height 100%
+        left 0px
+        right 0px
+        z-index 300
+        margin auto
+        figure
+            margin 0px
 
 @media (max-width: 960px)
     section.info-pages
