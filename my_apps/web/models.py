@@ -179,7 +179,7 @@ class Contacto(models.Model):
 class MovilizarEmpresa(models.Model):
     creado = models.DateTimeField("Creado", auto_now_add=True)
     nombre = models.CharField("Nombre", max_length=120)
-    Correo = models.EmailField("Correo")
+    correo = models.EmailField("Correo")
     mensaje = models.TextField("Mensaje")
 
     class Meta:
