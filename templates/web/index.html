@@ -90,16 +90,16 @@
         A TU EMPRESA?
       </h2>
       <div class="text">Déjanos tus datos y nos comunicaremos contigo:</div>
-      <form>
+      <form class="form-home">
         <div class="cnt-input">
           <div class="input">
-            <input type="text" placeholder="Nombre"/>
+            <input type="text" placeholder="Nombre" name="nombre" id="nombre" />
           </div>
           <div class="input">
-            <input type="text" placeholder="Correo"/>
+            <input type="text" placeholder="Correo" name="correo" id="correo" />
           </div>
           <div class="input">
-            <textarea name="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+            <textarea cols="30" rows="10" placeholder="Mensaje" id="mensaje" name="mensaje"></textarea>
           </div>
         </div>
         <div class="button">
@@ -113,13 +113,70 @@
     <figure><img src="{{STATIC_URL}}img/movilizar.png" alt=""/></figure>
   </div>
 </section>
+<section class="pop-contacto">
+  <div class="pop pop-1">
+    <div class="content">
+      <div class="icon-cross"></div>
+      <figure><img src="{{STATIC_URL}}img/send-contact.png" alt=""/></figure>
+      <h3>¡Gracias, tu mensaje ha sido enviado!</h3>
+      <div class="text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis voluptates, mollitia esse! Dolorem itaque error nihil dicta vel sed esse, illum cupiditate ipsum eius voluptatum voluptatem delectus, atque, enim eveniet!
+
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock content %}
 {% block js %}
-
+<script src="{{STATIC_URL}}js/jquery.validate.min.js"></script>
 <script src="{{STATIC_URL}}js/jquery.bxslider.min.js"></script>
 <script>
   $(document).ready(function(){
+      $(".form-home").validate({
+              rules: {
+                  nombre: "required",
 
+                  correo: {
+                      required: true,
+                      email: true
+                  },
+                  mensaje: "required",
+              },
+              messages: {
+                  nombre: "No olvides ingresar un nombre",
+
+                  correo: "No olvides ingresar un correo válido",
+                  mensaje: "No olvides ingresar un mensaje",
+              },
+              submitHandler: function (form) {
+                  $.ajax({
+                    url: '{% url "web:ajax_home" %}',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                      'nombre': $("#nombre").val(),
+                      'mensaje': $("#mensaje").val(),
+                      'correo': $("#correo").val()
+                    },
+                    success: function(data) {
+
+                    if (data.status == "ok") {
+                        var valor_data = $(".send").attr('data-envio');
+                        var class_active = "."+valor_data
+                        /*$(".pop-active").removeClass('pop-active');*/
+                        $(class_active).addClass('pop-active');
+                        $(".overlay").addClass('overlay-block');
+                        $("#nombre").val("");
+
+                        $("#mensaje").val("");
+                        $("#correo").val("");
+                        };
+                    },
+                  })
+
+                return false;
+              }
+          });
   	$('.container-slider').bxSlider({
   		mode:"fade",
   		auto: true,

@@ -40,10 +40,10 @@
                 <div class="form-section">
                   <form action="self" method="post" class="form-contact">
                     <div class="formgroup">
-                      <input type="text" placeholder="Nombre*" name="nombre"/>
-                      <input type="text" placeholder="Teléfono*" name="telefono"/>
-                      <input type="text" placeholder="Correo*" name="correo"/>
-                      <textarea placeholder="Mensaje*" name="mensaje"></textarea>
+                      <input type="text" placeholder="Nombre*" id="nombre" name="nombre"/>
+                      <input type="text" placeholder="Teléfono*" id="telefono" name="telefono"/>
+                      <input type="text" placeholder="Correo*" id="correo" name="correo"/>
+                      <textarea placeholder="Mensaje*" id="mensaje" name="mensaje"></textarea>
                       <p>*campos obligatorio.</p>
                       <button type="submit" value="Enviar" data-envio="pop-1" class="right-button send">
                         Enviar
@@ -79,6 +79,7 @@
 {% block js %}
 
     <script src="{{STATIC_URL}}js/jquery.validate.min.js"></script>
+    <script src="{{STATIC_URL}}js/csrf.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;key=AIzaSyD2YPlowqtNtgh1HXzSJStZ39kLCrzQ0GY"></script>
     <script src="https://embedmaps.com/google-maps-authorization/script.js?id=3aabe127d1872c5bcd44e90cdc5ea241b5d309d0"></script>
     <script>
@@ -122,9 +123,43 @@
                   telefono: "No olvides ingresar un telefono válido",
                   correo: "No olvides ingresar un correo válido",
                   mensaje: "No olvides ingresar un mensaje",
+              },
+              submitHandler: function (form) {
+                  $.ajax({
+                    url: '{% url "web:ajax_contacto" %}',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                      'nombre': $("#nombre").val(),
+                      'telefono': $("#telefono").val(),
+                      'mensaje': $("#mensaje").val(),
+                      'correo': $("#correo").val()
+                    },
+                    success: function(data) {
+
+                    if (data.status == "ok") {
+                        var valor_data = $(".send").attr('data-envio');
+                        var class_active = "."+valor_data
+                        /*$(".pop-active").removeClass('pop-active');*/
+                        $(class_active).addClass('pop-active');
+                        $(".overlay").addClass('overlay-block');
+                        $("#nombre").val("");
+                        $("#telefono").val("");
+                        $("#mensaje").val("");
+                        $("#correo").val("");
+                        };
+                    },
+                  })
+
+                return false;
               }
           });
       });
+    </script>
+    <script>
+        jQuery(document).ready(function($) {
+
+        });
     </script>
 
 {% endblock js %}

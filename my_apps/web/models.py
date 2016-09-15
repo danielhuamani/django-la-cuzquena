@@ -15,6 +15,7 @@ class Configuracion(models.Model):
     youtube = models.URLField("Youtube", blank=True, null=True)
     facebook = models.URLField("facebook", blank=True, null=True)
     twitter = models.URLField("Twitter", blank=True, null=True)
+    mensaje_gracias = models.TextField("Mensaje de Gracias")
 
     class Meta:
         verbose_name = "Configuracion"
@@ -164,7 +165,7 @@ class Contacto(models.Model):
     creado = models.DateTimeField("Creado", auto_now_add=True)
     nombre = models.CharField("Nombre", max_length=120)
     telefono = models.CharField("Telefono", max_length=20)
-    Correo = models.EmailField("Correo")
+    correo = models.EmailField("Correo")
     mensaje = models.TextField("Mensaje")
 
     class Meta:

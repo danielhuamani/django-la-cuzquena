@@ -1445,13 +1445,6 @@ section.info-pages .contact-us .contact-main .form-section {
   padding: 30px 0 0 0;
   width: 50%;
 }
-section.info-pages .contact-us .contact-main .form-section label {
-  margin: -5px 0 10px 0;
-  position: relative;
-  display: block;
-  font-size: 12px;
-  color: #f00;
-}
 section.info-pages .contact-us .contact-main .form-section .formgroup {
   padding: 0 15px;
 }
@@ -1520,6 +1513,13 @@ section.info-pages .contact-us .contact-main .form-section button:hover .only-no
 }
 section.info-pages .contact-us .contact-main h3.main-title {
   text-align: left;
+}
+label {
+  margin: -5px 0 10px 0;
+  position: relative;
+  display: block;
+  font-size: 12px;
+  color: #f00;
 }
 .overlay-block {
   display: block !important;
@@ -2315,7 +2315,7 @@ section.contacto-empresa .container {
 }
 section.contacto-empresa .container figure {
   margin-bottom: 0px;
-  margin-top: -10px;
+  margin-top: 0px;
 }
 section.contacto-empresa .container figure img {
   display: block;

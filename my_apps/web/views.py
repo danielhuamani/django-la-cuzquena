@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import HomeBanner, Home, Nosotros, Valores, Servicios, NuestrosServicios, Vehiculos, VehiculoBanner, ContactoBanner
+from django.http import JsonResponse
+from .models import HomeBanner, Home, Nosotros, Valores, Servicios, NuestrosServicios, Vehiculos, VehiculoBanner, ContactoBanner, Contacto, MovilizarEmpresa
 
 
 def home(request):
@@ -34,3 +35,30 @@ def contacto(request):
     banner, create = ContactoBanner.objects.get_or_create(pk=1)
     HEAD = "CONTACTO"
     return render(request, "web/contacto.html", locals())
+
+
+def ajax_contacto(request):
+    data = {'status': 'error'}
+    if request.is_ajax():
+        nombre = request.POST.get("nombre")
+        telefono = request.POST.get("telefono")
+        mensaje = request.POST.get("mensaje")
+        correo = request.POST.get("correo")
+        contact = Contacto(nombre=nombre, telefono=telefono, correo=correo, mensaje=mensaje)
+        contact.save()
+        if contact:
+            data['status'] = "ok"
+    return JsonResponse(data)
+
+
+def ajax_home(request):
+    data = {'status': 'error'}
+    if request.is_ajax():
+        nombre = request.POST.get("nombre")
+        mensaje = request.POST.get("mensaje")
+        correo = request.POST.get("correo")
+        contact = MovilizarEmpresa(nombre=nombre, correo=correo, mensaje=mensaje)
+        contact.save()
+        if contact:
+            data['status'] = "ok"
+    return JsonResponse(data)

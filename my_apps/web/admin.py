@@ -64,6 +64,17 @@ class VehiculoBannerAdmin(SingleModelAdmin):
 class ContactoBannerAdmin(SingleModelAdmin):
     pass
 
+
+class ContactoAdmin(SummernoteModelAdmin):
+    model = Contacto
+    readonly_fields = ("creado", "correo", "nombre", "telefono", "mensaje")
+
+
+class MovilizarEmpresaAdmin(SummernoteModelAdmin):
+    model = MovilizarEmpresa
+    readonly_fields = ("creado", "correo", "nombre", "mensaje")
+
+
 admin.site.register(Configuracion, ConfiguracionAdmin)
 admin.site.register(Nosotros, NosotrosAdmin)
 admin.site.register(Servicios, ServiciosAdmin)
@@ -72,7 +83,7 @@ admin.site.register(NuestrosServicios, NuestrosServiciosAdmin)
 admin.site.register(Vehiculos, VehiculosAdmin)
 admin.site.register(VehiculoBanner, VehiculoBannerAdmin)
 admin.site.register(ContactoBanner, ContactoBannerAdmin)
-admin.site.register(Contacto)
-admin.site.register(MovilizarEmpresa)
+admin.site.register(Contacto, ContactoAdmin)
+admin.site.register(MovilizarEmpresa, MovilizarEmpresaAdmin)
 admin.site.register(HomeBanner, HomeBannerAdmin)
 admin.site.register(Home, HomeAdmin)

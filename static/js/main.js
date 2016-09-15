@@ -13,7 +13,6 @@ jQuery(document).ready(function($) {
 		$(".icon-cross").click(function(event) {
 			/* Act on the event */
 			$(".pop-active").removeClass('pop-active');
-			console.log($("vehiculos-pages .overlay"))
 			$(".vehiculos-pages .overlay").removeClass('overlay-block')
 
 		});
@@ -26,15 +25,7 @@ jQuery(document).ready(function($) {
 	}
 	if($(".send").length > 0){
 
-		$(".send").click(function(event) {
-			/* Act on the event */
-			var valor_data = $(this).attr('data-envio');
-			console.log(valor_data);
-			var class_active = "."+valor_data
-			/*$(".pop-active").removeClass('pop-active');*/
-			$(class_active).addClass('pop-active');
-			$(".overlay").addClass('overlay-block')
-		});
+
 
 		$(".icon-cross").click(function(event) {
 			/* Act on the event */
