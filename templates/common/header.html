@@ -1,3 +1,4 @@
+{% load static app_tags %}
 <header>
   <div class="container">
     <div class="icon-menu menu"></div>
@@ -19,7 +20,7 @@
         </ul>
       </nav>
       <div class="container-telephone">
-        <figure><img src="{{STATIC_URL}}img/telefono.png" alt=""/></figure><a href="">{{site.telefono}}</a>
+        <figure><img src="{{STATIC_URL}}img/telefono.png" alt=""/></figure><a href="">{{site.telefono|tags_telefono_header}}</a>
       </div>
     </div>
   </div>

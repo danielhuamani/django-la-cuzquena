@@ -150,11 +150,17 @@ footer
 					.icon-icon-phone
 						font-size 22px
 						color c-amarillo
-					a
+					.content-telefono
 						margin-left 8px
-						font-family bold
-						font-size 18px
-						color c-blanco
+						flex-direction column
+						display flex
+						text-align left
+
+						a
+							margin 0
+							font-family bold
+							font-size 18px
+							color c-blanco
 			.cnt-address
 				padding-top 5px
 				text-align center
@@ -285,6 +291,9 @@ footer
 			padding-left 25px
 			padding-right 25px
 			box-sizing border-box
+			.text
+				justify-content center
+
 		.redes
 			width 49%
 			box-sizing border-box
@@ -318,6 +327,9 @@ footer
 						display none
 			.cnt-phone
 				margin-bottom 20px
+				.text
+					.content-telefono
+						text-align center
 			.pages, .cnt-address, .cnt-phone, .redes
 				border none
 				padding 0px 0px

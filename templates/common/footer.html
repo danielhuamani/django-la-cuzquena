@@ -1,4 +1,4 @@
-
+{% load static app_tags %}
 <footer>
   <div class="footer-top">
     <div class="container">
@@ -34,10 +34,17 @@
       <div class="cnt-phone">
         <h3>Llámanos</h3>
         <div class="text">
-          <div class="icon-icon-phone"></div><a href="">
-            {{site.telefono}}
+          <div class="icon-icon-phone"></div>
+          <div class="content-telefono">
+          {% for telefono in site.telefono|tags_telefono_footer %}
+            <a href="">
+            {{telefono}}
 
             </a>
+
+          {% endfor %}
+
+          </div>
         </div>
       </div>
       <div class="redes">

@@ -1,5 +1,5 @@
 {% extends "common/base.html" %}
-{% load static %}
+
 {% load thumbnail %}
 {% block content %}
 
@@ -9,13 +9,16 @@
   <div class="container-slider">
     {% for banner in banners %}
 
-    <div style="background-image:url('{{ banner.banner.url }}')" class="slider">
+    <div  class="slider">
       <div class="content">
         <div class="container-text">
           <h3 class="title">{{banner.titulo}}</h3>
           <h4 class="sub-title">{{banner.subtitulo}}</h4>
           <div class="text">{{banner.descripcion|safe}}</div>
         </div>
+      </div>
+      <div class="fondo" style="background-image:url('{{ banner.banner.url }}')">
+
       </div>
     </div>
   {% endfor %}
@@ -180,7 +183,7 @@
   	$('.container-slider').bxSlider({
   		mode:"fade",
   		auto: true,
-  		pause: '3000',
+  		pause: '300000',
   		pager: true,
   		controls: false,
   		adaptiveHeight: true,

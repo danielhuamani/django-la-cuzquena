@@ -684,8 +684,24 @@ footer .footer-top .container .cnt-phone .text .icon-icon-phone {
   font-size: 22px;
   color: #fcb61f;
 }
-footer .footer-top .container .cnt-phone .text a {
+footer .footer-top .container .cnt-phone .text .content-telefono {
   margin-left: 8px;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  text-align: left;
+}
+footer .footer-top .container .cnt-phone .text .content-telefono a {
+  margin: 0;
   font-family: 'proxima_nova_rgbold';
   font-size: 18px;
   color: #fff;
@@ -903,6 +919,14 @@ footer .footer-bottom h3 {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
+  footer .footer-top .container .cnt-phone .text {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
   footer .footer-top .container .redes {
     width: 49%;
     -webkit-box-sizing: border-box;
@@ -953,6 +977,9 @@ footer .footer-bottom h3 {
   }
   footer .footer-top .container .cnt-phone {
     margin-bottom: 20px;
+  }
+  footer .footer-top .container .cnt-phone .text .content-telefono {
+    text-align: center;
   }
   footer .footer-top .container .pages,
   footer .footer-top .container .cnt-address,
@@ -2113,6 +2140,14 @@ section.banner .container-slider .slider figure {
 section.banner .container-slider .slider figure img {
   width: 100%;
 }
+section.banner .container-slider .slider .fondo {
+  height: 360px;
+  width: 52%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-position-x: -40px;
+}
 section.banner .container-slider .slider .content {
   height: 100%;
   display: inline-block;
@@ -2474,8 +2509,21 @@ section.contacto-empresa .container .formulario form .button button:hover {
     display: box !important;
     display: flex !important;
   }
+  section.banner .container-slider .slider .fondo {
+    width: 100%;
+  }
   section.banner .container-slider .slider .content {
+    position: absolute;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
     margin: auto;
+    left: 0;
+    right: 0;
+    top: 35px;
     display: block;
     float: none;
     padding-top: 10px;
@@ -2513,7 +2561,7 @@ section.contacto-empresa .container .formulario form .button button:hover {
     right: 0px;
     width: 300px;
     text-align: center;
-    bottom: 45px;
+    bottom: 55px;
   }
   section.banner .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item {
     margin: 0px 5px;
