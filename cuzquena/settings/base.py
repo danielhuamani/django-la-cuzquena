@@ -49,7 +49,8 @@ THIRD_PARTY_APPS = [
 
 
 LOCAL_APPS = [
-    "my_apps.web"
+    "my_apps.web",
+    "my_apps.seo"
 ]
 
 INSTALLED_APPS = THIRD_PARTY_APPS + DJANGO_APPS + LOCAL_APPS
@@ -171,6 +172,11 @@ ADMIN_REORDER = (
     {'app': 'web', 'label': u'Formularios', 'models': (
         {'model': 'web.Contacto', 'label': u'Contacto'},
         {'model': 'web.MovilizarEmpresa', 'label': u'Movilizar a tu Empresa'},
+
+    )},
+    {'app': 'seo', 'label': u'SEO', 'models': (
+        {'model': 'web.SEO', 'label': u'SEO'},
+
 
     )},
     # Reorder app models
